@@ -1,0 +1,85 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4">    
+                    <img src="{{flag}}" width="30" height="30" class="d-inline-block align-top">
+                {{ clan?.name }}</h1>
+                <p>
+                    {{ clan?.description }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+        <h4>Infos</h4>
+      </div>
+      <div class="float-right">
+        <button type="button" class="btn btn-secondary" (click)="voltar()">Voltar</button>
+      </div>
+    </div>
+    <div class="card-body">
+        <div class="table-reponsive">
+            <table class="table table-borderless table-hover">
+                <tbody>
+                <tr>
+                    <td>SCORE:</td>
+                    <td>{{ clan?.clanScore }}</td>
+                </tr>
+                
+                <tr>
+                    <td>MEMBERS:</td>
+                    <td> {{ clan?.members }} </td>
+                </tr>
+                <tr>
+                    <td>TAG:</td>
+                    <td> {{ clan?.tag }}</td>
+                </tr>
+                <tr>
+                    <td>TYPE:</td>
+                    <td> {{ clan?.type }} </td>
+                </tr>
+                <tr>
+                    <td>LOCATION:</td>
+                    <td> {{ clan?.location.name }} </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+
+  <div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+        <h4>Membros</h4>
+      </div>
+    </div>
+    <div class="card-body" >
+        <div class="table-reponsive">
+            <table class="table table-borderless table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Nickname</th>
+                      <th scope="col">Level</th>
+                      <th scope="col">Role</th>
+                    </tr>
+                  </thead> 
+                <tbody>
+                <tr *ngFor=" let member of clan?.memberList">
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.expLevel }}</td>
+                    <td>{{ member.role }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>

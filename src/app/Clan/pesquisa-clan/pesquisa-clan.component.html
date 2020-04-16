@@ -1,0 +1,20 @@
+<section class="cta_part section_padding m-3">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="cta_text text-center">
+                    <h2>Pesquisa de Clans</h2>
+                    <div class="input-group">
+                        <input type="text" class="form-control" 
+                        #pesquisar
+                        placeholder="Nome do clã" 
+                        name="pesq" [(ngModel)]="nomeclan">
+                        <div class="input-group-append" id="button-addon4">
+                            <button class="btn btn-danger" [routerLink]="['clanlista']" [queryParams]="{name: nomeclan}" [disabled]="!nomeclan || nomeclan.length<3">Pesquisar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
